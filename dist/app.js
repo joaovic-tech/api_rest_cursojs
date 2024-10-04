@@ -23,6 +23,7 @@ const whiteList = [
   'http://192.198.1.7',
 ];
 
+// eslint-disable-next-line no-unused-vars
 const corsOptions = {
   origin(origin, callback) {
     if (whiteList.indexOf(origin) !== -1 || !origin) {
@@ -42,7 +43,7 @@ class App {
   }
 
   middlewares() {
-    this.app.use(_cors2.default.call(void 0, corsOptions));
+    this.app.use(_cors2.default.call(void 0, ));
     this.app.use(_helmet2.default.call(void 0, ));
     this.app.use(_express2.default.urlencoded({
       extended: true,
