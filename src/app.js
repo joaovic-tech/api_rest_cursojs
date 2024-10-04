@@ -17,13 +17,8 @@ import tokenRoutes from './routes/tokenRoutes';
 import alunoRoutes from './routes/alunoRoutes';
 import fotoRoutes from './routes/fotoRoutes';
 
-const whiteList = [
-  'http://localhost:3000',
-  'http://192.198.1.6',
-  'http://192.198.1.7',
-];
+const whiteList = [];
 
-// eslint-disable-next-line no-unused-vars
 const corsOptions = {
   origin(origin, callback) {
     if (whiteList.indexOf(origin) !== -1 || !origin) {
@@ -43,7 +38,7 @@ class App {
   }
 
   middlewares() {
-    this.app.use(cors());
+    this.app.use(cors(corsOptions));
     this.app.use(helmet());
     this.app.use(express.urlencoded({
       extended: true,

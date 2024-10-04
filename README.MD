@@ -13,4 +13,3 @@
 - delete -> Apaga um usuário -> DELETE
 - show -> Mostra um usuário -> GET
 - update -> Atualiza um usuário -> PATH ou PUT
-
